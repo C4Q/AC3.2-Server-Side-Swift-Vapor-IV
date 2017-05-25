@@ -5,6 +5,7 @@ Creating a webpage with Leaf and Deploying to Heroku
 
 1. [Using Leaf](https://docs.vapor.codes/2.0/leaf/package/)
 2. [Templating with Leaf - RW](https://videos.raywenderlich.com/screencasts/511-server-side-swift-with-vapor-templating-with-leaf)
+3. [Deploying to Heroku - RW](https://videos.raywenderlich.com/screencasts/516-server-side-swift-with-vapor-deploying-to-heroku-with-postgresql)
 
 ### Helpful Resources:
 1. [Vapor - Big Nerd Ranch](https://www.bignerdranch.com/blog/server-side-swift-with-vapor/)
@@ -211,21 +212,30 @@ Rerun your project and check out `localhost:8080/view/all`
 
 > Images
 
-#### Organizing Leaf files
+#### How to Organize Leaf files
 
-Leaf provides three tremendously useful tags for organizing your code, `#embed()`, `#import()`, and `export()`. `#embed()` is used to *embed* the contents of another leaf file. The `#import()` tag is used to insert code into the leaf page from some other source in your project. And similarly, the `#export()` tag lets you define a chunk of code to be injected somewhere else. 
+Leaf provides a tremendously useful tag for organizing your code, `#embed()`. `#embed()` is used to *embed* the contents of another leaf file.  
 
-Create two new leaf files, `head.leaf` and `body.leaf`. Cut/paste the code for your `<head>` tags from `base.leaf` and put it into `head.leaf`; do the same for `<body>` and `body.leaf`. Now replace the contents of `base.leaf` with:
+Create two new leaf files, `head.leaf` and `body.leaf`. Cut/paste the code in your `<head>` tags from `base.leaf` and put it into `head.leaf`; do the same for `<body>` and `body.leaf`. Now replace the contents of `base.leaf` with:
 
 ```html
 <!DOCTYPE html>
 <html lang="en">
   
- 	#embed("head")
- 	#embed("body")
+  	<head>
+ 		#embed("head")
+ 	</head>
+ 	<body>
+ 		#embed("body")
+ 	</body>
   
 </html>
 
 ```
 
 And rerun the project. **Notice that there's no difference in the page's output!**
+
+---
+
+### Heroku
+
