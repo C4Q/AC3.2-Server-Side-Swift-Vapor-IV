@@ -9,6 +9,7 @@ Creating a webpage with Leaf and Deploying to Heroku
 
 ### Helpful Resources:
 1. [Vapor - Big Nerd Ranch](https://www.bignerdranch.com/blog/server-side-swift-with-vapor/)
+2. [Building Your First Web App in Swift - AppCoda](http://www.appcoda.com/server-side-swift-vapor/)
 
 ### API Reference: 
 1. [Vapor API Reference](http://api.vapor.codes/)
@@ -237,5 +238,19 @@ And rerun the project. **Notice that there's no difference in the page's output!
 
 ---
 
-### Heroku
+### [Heroku](https://www.heroku.com)
+
+> Make sure you've already signed up for an account and installed the [Heroku CLI](https://devcenter.heroku.com/articles/heroku-cli) before doing this section. To test if its installed, run `$ heroku --version`. Also, be sure you sign into your account in the `CLI` with `$ heroku login`.
+
+Deploying to the web is much easier than you think. All you'll need to do is:
+
+1. Go to the root of your project and run `$ vapor heroku init`
+	- At this point, if you have uncommitted changes you will be prompted to commit them
+2. You'll be asked a few questions at the propmt:
+	- Would you like to provide a custom name? n
+	- Would you like to deploy to other than US region server? n
+	- Would you like to provide a custom Heroku buildpack? n
+	- Are you using a custom Executable name? n
+	- Would you like the push to Heroku now? y
+3. Now it will take some time for your project to push up to Heroku
 
