@@ -34,6 +34,8 @@ Leaf is a templating language that you'll use in conjunction with HTML to genera
 5. Create a new folder, `Resources`, and then another one named `Views` in that one.
 6. Create a new file named `base.leaf` inside of `Reources/Views`
 
+![](./Images/base_leaf.png)
+
 #### Hello, Leaf!
 
 We're going to start off with some basics, so inside of your `base.leaf` file, add in:
@@ -52,6 +54,8 @@ We're going to start off with some basics, so inside of your `base.leaf` file, a
 ```
 
 > Note: You can get HTML syntax hightlighting for this file by going into `Editor > Syntax Coloring > HTML`
+
+![](./Images/html_syntax_coloring.png)
 
 To get to this new page we've created, we'll need to create a route to it just like any other resource in our project.
 
@@ -79,7 +83,7 @@ final class CatPageController {
   }
   
   func index(request: Request) throws -> ResponseRepresentable {
-    return return "Add code here shortly"
+    return "Add code here shortly"
   }
 }
 ```
@@ -109,7 +113,7 @@ The LeafProvider will render the page as HTML and display it in your browser. We
 
 Run your project, and head on over to `localhost:8080/view` in your browser.
 
-> Image
+![](./Images/hello_leaf.png)
 
 ### Templating 
 
@@ -150,7 +154,9 @@ In order to access our passed in data, we'll need to use the `#()` syntax, along
 
 Now, rerun the project and go to `localhost:8080/view` and reload the page a few times. 
 
-> Images
+![](./Images/hello_leaf_japanese.png)
+![](./Images/hello_leaf_french.png)
+![](./Images/hello_leaf_russian.png)
 
 **Exercise**
 1. Create a new route that accepts an additional parameter (something like `/view/:name`) 
@@ -211,7 +217,7 @@ And now back in `base.leaf`:
 ```
 Rerun your project and check out `localhost:8080/view/all`
 
-> Images
+![](./Images/looped_leafs.png)
 
 #### How to Organize Leaf files
 
@@ -246,6 +252,7 @@ Deploying to the web is much easier than you think. All you'll need to do is:
 
 1. Go to the root of your project and run `$ vapor heroku init`
 	- At this point, if you have uncommitted changes you will be prompted to commit them
+  - ![](./Images/heroku_uncommitted.png)
 2. You'll be asked a few questions at the propmt:
 	- Would you like to provide a custom name? n
 	- Would you like to deploy to other than US region server? n
@@ -253,4 +260,7 @@ Deploying to the web is much easier than you think. All you'll need to do is:
 	- Are you using a custom Executable name? n
 	- Would you like the push to Heroku now? y
 3. Now it will take some time for your project to push up to Heroku
+  - ![](./Images/heroku_upload.png)
+4. When the process finishes, you should be able to go to your heroku dashboard and see the project you've just uploaded. Click on it, and select the button that says "Open App"
+5. Congrats, you've uploaded your first Vapor project to heroku!
 
